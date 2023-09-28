@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block title %} Gelado Bom - Sorvetes & Açaí {% endblock %}
+
+{% block content %} 
+
+<div class='sorvetes-acais'>
+    <div class='sorvetes-div'>
+        <h2>Sorvetes</h2>
+
+            <ul class='sorvetes'>
+                {% for sorvete in sorvetes %}
+                        <li class='sorvete'>
+                            <h3>{{ sorvete.sabor }}</h3>
+                            <p>Preço: R$ {{ sorvete.preco }}</p>
+                            {% if sorvete.estoque > 0 %}
+                                <p>Itens no estoque: {{ sorvete.estoque }}</p>
+                            {% else %}
+                                <p>Este produto está fora de estoque.</p>
+                            {% endif %}
+                        </li>
+                {% endfor %}
+            </ul>
+    </div>
+
+    <div class='acais-div'>
+        <h2>Açaís</h2>
+            <ul class='acais'>
+                {% for acai in acais %}
+                    <li class='acai'>
+                        <h3>{{ acai.tamanho }}</h3>
+                        <p>Preço: R$ {{ acai.preco }}</p>
+                        {% if acai.estoque > 0 %}
+                            <p>Itens no estoque: {{ acai.estoque }}</p>
+                        {% else %}
+                            <p>Este produto está fora de estoque.</p>
+                        {% endif %}
+                    </li>
+                {% endfor %}
+            </ul>
+    </div>
+</div>
+{% endblock %} 

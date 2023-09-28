@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %} Gelado Bom - Picolés {% endblock %}
+
+{% block content %} 
+
+<div class='picoles-div'>
+    <h2>Aqui está o nosso estoque de picolés:</h2>
+
+        <ul class='picoles'>
+            {% for picole in picoles %}
+                    <li class='picole'>
+                        <h3>{{ picole.sabor }}</h3>
+                        <p class='cobertura'>{{ picole.tipo }}</p>
+                        <p>Preço: R$ {{ picole.preco }}</p>
+                        {% if picole.estoque > 0 %}
+                            <p>Itens no estoque: {{ picole.estoque }}</p>
+                        {% else %}
+                            <p>Este produto está fora de estoque.</p>
+                        {% endif %}
+                    </li>
+            {% endfor %}
+        </ul>
+</div>
+{% endblock %}

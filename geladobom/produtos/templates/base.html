@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+    <title>{% block title %}Gelado Bom{% endblock %}</title>
+  </head>
+  <body>
+    <div class="nav">
+      <nav class="navbar">
+        <ul>
+          <div class="nav-main">
+            <li>
+              <a href="http://127.0.0.1:8000/"
+                ><img
+                  class="nav-icon"
+                  src="{% static 'img/mamute.png' %}"
+                  alt="Logo do Açaí Mamute" 
+              /></a>
+            </li>
+          </div>
+          <div class="nav-produtos">
+            <li>
+              <a href="http://127.0.0.1:8000/picoles" class="nav-item"
+                >Picolés</a
+              >
+            </li>
+            <li>
+              <a href="http://127.0.0.1:8000/sorvetes" class="nav-item"
+                >Sorvetes & Açaí</a
+              >
+            </li>
+          </div>
+          <li class="shop">
+            <img class='shop-svg selected' src="{% static "img/shop.svg" %}" alt="Ícone do carrinho de compras">
+            <div class="shop-dropdown">
+              <div class="shop-dropdown-items">
+                <p>Teste</p>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <main class="main">{% block content %} {% endblock %}</main>
+    <script src="{% static 'js/main.js' %}"></script>
+  </body>
+</html>
