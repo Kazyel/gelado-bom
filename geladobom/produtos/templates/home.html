@@ -2,7 +2,11 @@
 {% block content %}
 <section class="home-main">
   {% load static %}
-  <img class="home-image" src="{% static 'img/mamute.png'%}" alt="Logo do Açaí Mamute" />
+  <img
+    class="home-image"
+    src="{% static 'img/mamute.png'%}"
+    alt="Logo do Açaí Mamute"
+  />
   <div class="home-text">
     <h1>Conheça o <span class="title-span">melhor</span> açaí do Estado!</h1>
     <p>
@@ -37,8 +41,10 @@
   </div>
 </section>
 <section class="home-section-1 spacer layer1">
+  <div class="section1-title">
     <h2>Conheça nossos</h2>
     <h2>Sorvetes & Açaís</h2>
+  </div>
 </section>
 
 {% endblock %}
