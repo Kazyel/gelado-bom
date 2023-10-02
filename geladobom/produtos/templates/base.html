@@ -40,15 +40,42 @@
           <li class="shop">
             <img class='shop-svg selected' src="{% static "img/shop.svg" %}" alt="Ícone do carrinho de compras">
             <div class="shop-dropdown">
-              <div class="shop-dropdown-items">
-                <p>Teste</p>
-              </div>
+              {% for cartItem in cartItems %}
+                {% if cartItem.quantidade <= 0 %}
+                {% else %}
+                  <div class='cart-products'>
+                    <div style="display:flex; gap:4px">•<p>{{cartItem.produto}}</p></div>
+                    <p>{{cartItem.quantidade}}x</p>
+                  </div>
+                {% endif %}  
+              {% endfor %}
+                <button class="shop-button">Comprar</button>
             </div>
           </li>
         </ul>
       </nav>
     </div>
     <main class="main">{% block content %} {% endblock %}</main>
-    <script src="{% static 'js/main.js' %}"></script>
+    <script type='text/javascript' src="{% static 'js/main.js' %}"></script>
+    <script type='text/javascript' src="{% static 'js/cart.js' %}"></script>
+    <script type="text/javascript">
+      function getCookie(name) {
+        let cookieValue = null;
+        if (document.cookie && document.cookie !== '') {
+            const cookies = document.cookie.split(';');
+            for (let i = 0; i < cookies.length; i++) {
+                const cookie = cookies[i].trim();
+                // Does this cookie string begin with the name we want?
+                if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                    cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                    break;
+                }
+            }
+        }
+        return cookieValue;
+      }
+      const csrftoken = getCookie('csrftoken');
+    </script>
+    <script 
   </body>
 </html>

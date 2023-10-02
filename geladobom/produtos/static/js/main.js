@@ -1,3 +1,5 @@
+
+
 const shopSvg = document.querySelector(".shop-svg");
 const shopDropdown = document.querySelector(".shop-dropdown");
 
