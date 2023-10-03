@@ -40,16 +40,37 @@
           <li class="shop">
             <img class='shop-svg selected' src="{% static "img/shop.svg" %}" alt="Ícone do carrinho de compras">
             <div class="shop-dropdown">
-              {% for cartItem in cartItems %}
-                {% if cartItem.quantidade <= 0 %}
-                {% else %}
-                  <div class='cart-products'>
-                    <div style="display:flex; gap:4px">•<p>{{cartItem.produto}}</p></div>
-                    <p>{{cartItem.quantidade}}x</p>
-                  </div>
-                {% endif %}  
-              {% endfor %}
-                <button class="shop-button">Comprar</button>
+              <div class="shop-picoles">
+              <h2>Picolés</h2>  
+                {% for cartPicole in cartPicoles %}
+                  {% if cartPicole.quantidade <= 0 %}
+                  {% else %}
+                    <div class='cart-products'>
+                      <div style="display:flex; gap:4px">
+                        •<p>{{cartPicole.produto}}</p>
+                      </div>
+                      <p>{{cartPicole.quantidade}}x</p>
+                    </div>
+                  {% endif %}
+                {% endfor %}
+              </div>
+              <div class="shop-sorvetes">
+                {% if cartSorvetes %}
+                  <h2>Sorvetes</h2>
+                {% endif %}
+                {% for cartSorvete in cartSorvetes %}
+                  {% if cartSorvete.quantidade <= 0 %}
+                    {% else %}
+                      <div class='cart-products'>
+                        <div style="display:flex; gap:4px">
+                          •<p>{{cartSorvete.produto}}</p>
+                        </div>
+                        <p>{{cartSorvete.quantidade}}x</p>
+                      </div>
+                    {% endif %}  
+                {% endfor %}
+              </div>
+              <button class="shop-button">Comprar</button>
             </div>
           </li>
         </ul>

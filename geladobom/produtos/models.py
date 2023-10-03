@@ -43,12 +43,14 @@ class Acai(models.Model):
     def __str__(self):
         return self.tamanho
     
-class ShopCart(models.Model):
+class ShopCartPicole(models.Model):
     produto = models.ForeignKey(Picole, null=True, on_delete=models.SET_NULL)
     quantidade = models.IntegerField(default=0, null=True, blank=True)
-
-    @property
-    def get_cart_qntd(self):
-        total = self.quantidade
-        return total
     
+class ShopCartSorvete(models.Model):
+     produto = models.ForeignKey(Sorvete, null=True, on_delete=models.SET_NULL)
+     quantidade = models.IntegerField(default=0, null=True, blank=True)
+     
+class ShopCartAcai(models.Model):
+     produto = models.ForeignKey(Acai, null=True, on_delete=models.SET_NULL)
+     quantidade = models.IntegerField(default=0, null=True, blank=True)

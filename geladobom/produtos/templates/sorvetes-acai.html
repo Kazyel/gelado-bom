@@ -12,12 +12,18 @@
                 {% for sorvete in sorvetes %}
                         <li class='sorvete'>
                             <h3>{{ sorvete.sabor }}</h3>
-                            <p>Preço: R$ {{ sorvete.preco }}</p>
-                            {% if sorvete.estoque > 0 %}
-                                <p>Itens no estoque: {{ sorvete.estoque }}</p>
-                            {% else %}
-                                <p>Este produto está fora de estoque.</p>
-                            {% endif %}
+                            <div>
+                                <p>Preço: R$ {{ sorvete.preco }}</p>
+                                {% if sorvete.estoque > 0 %}
+                                    <p>Itens no estoque: {{ sorvete.estoque }}</p>
+                                {% else %}
+                                    <p>Este produto está fora de estoque.</p>
+                                {% endif %}
+                            </div>
+                            <div class="product-buttons">
+                                <button data-product="{{sorvete.id}}" data-action="add" data-url="updatesorvetes" class='update-cart add-button'>Adicionar</button>
+                                <button data-product="{{sorvete.id}}" data-action="remove" data-url="updatesorvetes" class="update-cart rmv-button">Remover</button>
+                            </div>
                         </li>
                 {% endfor %}
             </ul>

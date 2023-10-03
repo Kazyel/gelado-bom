@@ -3,420 +3,602 @@
    License: none (public domain)
 */
 
-@import url('https://fonts.googleapis.com/css2?family=Mooli&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Mooli&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
 }
 body {
-	line-height: 1;
-    background-color: #120D21;
-    font-family: 'Poppins', sans-serif;
+  line-height: 1;
+  background-color: #120d21;
+  font-family: "Poppins", sans-serif;
 }
-ol, ul {
-	list-style: none;
+ol,
+ul {
+  list-style: none;
 }
-blockquote, q {
-	quotes: none;
+blockquote,
+q {
+  quotes: none;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
 }
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
 /* Main */
 .main {
-    overflow: hidden;
-    display: flex;
-    flex-direction: column; 
-    width: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 }
 
 /* Navbar */
 
 .nav {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 .navbar {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .navbar ul {
-    width: 768px;
-    min-width: 768px;
-    display: flex;
-    background-color: #463679 ;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-evenly;  
-    color: white;
-    border-bottom: 2px solid white;
-    border-bottom-left-radius: 1.5rem;
-    border-bottom-right-radius: 1.5rem;
+  width: 768px;
+  min-width: 768px;
+  display: flex;
+  background-color: #463679;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  color: white;
+  border-bottom: 2px solid white;
+  border-bottom-left-radius: 1.5rem;
+  border-bottom-right-radius: 1.5rem;
 }
 
 .navbar li {
-    display: flex;
+  display: flex;
 }
 
 .nav-main {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .nav-main a {
-    display: flex
+  display: flex;
 }
 
 .nav-icon {
-    height: 56px;
-    width: 56px;
-    mix-blend-mode: luminosity;
+  height: 56px;
+  width: 56px;
+  mix-blend-mode: luminosity;
 }
 
 .nav-produtos {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
 }
 
 .nav-item {
-    color: #FFFADD;
-    font-weight: 700;
-    font-size: 1.2rem;
-    text-decoration: none;
+  color: #fffadd;
+  font-weight: 700;
+  font-size: 1.2rem;
+  text-decoration: none;
 }
 
 .nav-item:hover {
-    color:#fff2a7;
-    transition: all 700ms ease;
+  color: #fff2a7;
+  transition: all 700ms ease;
 }
 
 /* Shop */
 .shop {
-    position: relative; 
+  position: relative;
 }
 
 .shop-svg {
-    cursor: pointer;
-}   
+  cursor: pointer;
+}
 
 .shop-dropdown {
-    visibility: none;
-    display: flex;
-    flex-direction: column;
-    opacity: 0;
-    position: absolute;
-    justify-content: space-between;
-    z-index: -10;
-    top: 48px;
-    width: 156px;
-    padding: 1rem;
-    height: 196px;
-    gap: 0.75rem;
-    border-radius: 1.15rem;
-    background-color: #463679;
-    border: 2px solid white;
+  visibility: none;
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  position: absolute;
+  justify-content: space-between;
+  z-index: -10;
+  top: 48px;
+  width: 156px;
+  padding: 0.75rem;
+  gap: 0.75rem;
+  border-radius: 1.15rem;
+  background-color: #463679;
+  border: 2px solid white;
 }
 
 .cart-products {
-    font-size: 0.85rem;
-    font-weight: 700;    
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  font-size: 0.8rem;
+  line-height: 1.5rem;
+  font-weight: 200;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-
 .shop-button {
-    border: none;
-    border-radius: 1.5rem;
-    padding: 0.25rem;
-    color: black;
-    font-weight: 700;
-    background-color: white;
-    cursor: pointer;
-    font-family: 'Poppins', sans-serif;
-    transition: all 400ms ease
+  border: none;
+  border-radius: 1.5rem;
+  padding: 0.25rem;
+  color: black;
+  font-weight: 700;
+  background-color: white;
+  cursor: pointer;
+  font-family: "Poppins", sans-serif;
+  transition: all 400ms ease;
 }
 
 .shop-button:hover {
-    background-color: #fff2a7;
+  background-color: #fff2a7;
 }
 
 .display {
-    z-index: 10;
-    opacity: 1;
-    top: 56px;
-    right: -68px;  
-    visibility: visible;
-    transition: all 100ms ease;
+  z-index: 10;
+  opacity: 1;
+  top: 56px;
+  right: -68px;
+  visibility: visible;
+  transition: all 100ms ease;
+}
+
+.shop-sorvetes,
+.shop-picoles {
+  display: flex;
+  flex-direction: column;
+}
+
+.shop-sorvetes h2,
+.shop-picoles h2 {
+  padding: 0.5rem 0 0.25rem 0;
+  margin-bottom: 0.4rem;
+  font-weight: 800;
+  font-size: 1.15rem;
+  border-bottom: 1px solid white;
 }
 
 /* Homepage */
 .home-main {
-    position: relative;
-    display: flex;
-    margin-top: -1rem;
-    padding: 0 8rem;
-    justify-content: center;
-    align-items: center;
-    min-height: calc(100vh - 56px) ;
+  position: relative;
+  display: flex;
+  margin-top: -1rem;
+  padding: 0 8rem;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 56px);
 }
 
-.home-image { 
-    width: 328px;
-    height: 328px;
-    border-radius: 2.5rem;
-    margin: 0 2rem;
+.home-image {
+  width: 328px;
+  height: 328px;
+  border-radius: 2.5rem;
+  margin: 0 2rem;
 }
 
 .home-text {
-    display: flex;
-    min-width: 568px;
-    flex-direction: column;
-    gap: 1.5rem;
-    padding: 0 4rem;
-    color: white;
-    text-align: center;
+  display: flex;
+  min-width: 568px;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 0 4rem;
+  color: white;
+  text-align: center;
 }
 
-.home-text h1 { 
-    font-size: 3rem;
-    font-weight: 700;    
-    line-height: 3.5rem;
+.home-text h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 3.5rem;
 }
 
 .home-text p {
-    font-size: 1.5rem;
-    font-weight: 300;    
-    line-height: 1.75rem;
+  font-size: 1.5rem;
+  font-weight: 300;
+  line-height: 1.75rem;
 }
 
 .title-span {
-    color:#6f54c0;
-    font-weight: 800;
+  color: #6f54c0;
+  font-weight: 800;
 }
 
-.text-span-1 { 
-    color: #967ee7;
-    font-weight: 600;
+.text-span-1 {
+  color: #967ee7;
+  font-weight: 600;
 }
 
 .text-span-2 {
-    color:#fff3ad;
-    font-weight: 700;
+  color: #fff3ad;
+  font-weight: 700;
 }
 
 /* Home Section 1 */
 
 .home-section-1 {
-    background-color: white;
-    width: 100vw;
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  background-color: white;
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .section1-title {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    font-size: 4rem;
-    font-weight: 800;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
 }
 
+.section1-title h2 {
+  font-size: 3rem;
+  font-weight: 900;
+  color: #0c0816;
+}
 
+.section1-title h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #463679;
+}
+
+.section1-products {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.section1-product {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.product-main-img {
+  width: 296px;
+  height: 188px;
+  border-radius: 1.25rem 1.25rem 0 0;
+}
+
+.product-link {
+  align-items: center;
+  display: flex;
+  color: white;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0 0 0.75rem 0.75rem;
+  background-color: #463679;
+}
+
+.product-link a,
+img {
+  transition: all 250ms ease;
+  cursor: pointer;
+}
+
+.product-link a:hover {
+  transition: all 250ms ease;
+  padding-right: 4px;
+  color: #fff2a7;
+}
+
+.strokeHover {
+  transition: all 250ms ease;
+  stroke: #fff2a7;
+}
 
 /* Picolés */
-.picoles-div {  
-    width: 100%;
-    margin: 4.5rem 2rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    gap: 2rem;
+.picoles-div {
+  width: 100%;
+  margin: 4.5rem 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 2rem;
 }
 
 .picoles {
-    display: flex;
-    flex-direction: row;  
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
 }
 
-.picole { 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    line-height: 1.65rem;
-    justify-content: center;
-    width: 240px;
-    height: 240px;
-    border: 2px solid #FFFADD;
-    border-radius: 1.75rem;
-    background-color: #0C0816;
-    color: #FFFADD;
-    cursor: pointer;
-    transition: all 800ms ease;
-
+.picole {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1.5rem;
+  justify-content: space-between;
+  width: 240px;
+  height: 240px;
+  border: 2px solid #fffadd;
+  border-radius: 1.45rem;
+  background-color: #0c0816;
+  color: #fffadd;
+  cursor: pointer;
+  transition: all 800ms ease;
 }
 
-.picole > h3 {
-    font-weight: 900;
-    font-size: 1.65rem;
-    color: #6f54c0; 
+.picole h3 {
+  font-weight: 900;
+  font-size: 1.65rem;
+  color: #6f54c0;
 }
 
 .cobertura {
-    color: #463679;
-    font-weight: 600;
-    font-size: 1.2rem;
-    padding-bottom: 2rem;
+  color: #463679;
+  font-weight: 600;
+  font-size: 1.2rem;
 }
-
 
 /* Sorvetes & Açaí */
 
 .sorvetes-acais {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }
 
-.sorvetes-div, .acais-div {  
-    width: 100%;
-    margin: 4.5rem 2rem 0 2rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    gap: 2rem;
+.sorvetes-div,
+.acais-div {
+  width: 100%;
+  margin: 4.5rem 2rem 2rem 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
-.sorvetes-div > h2 , .acais-div > h2, .picoles-div > h2 {
-    font-size: 2.5rem;
-    margin-bottom: 1.75rem;
-    font-weight: 800;
-    color: #FFFADD;
+.sorvetes-div > h2,
+.acais-div > h2,
+.picoles-div > h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1.75rem;
+  font-weight: 800;
+  color: #fffadd;
 }
 
-.sorvetes, .acais {
-    display: flex;
-    flex-direction: row;  
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 2rem;
+.sorvetes,
+.acais {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
-.sorvete, .acai { 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    line-height: 1.65rem;
-    justify-content: center;
-    width: 240px;
-    height: 240px;
-    border: 2px solid #FFFADD;
-    border-radius: 1.75rem;
-    background-color: #0C0816;
-    color: #FFFADD;
-    cursor: pointer;
-    transition: all 800ms ease;
-
+.sorvete,
+.acai {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1.5rem;
+  justify-content: space-between;
+  width: 240px;
+  height: 240px;
+  border: 2px solid #fffadd;
+  border-radius: 1.45rem;
+  background-color: #0c0816;
+  color: #fffadd;
+  cursor: pointer;
+  transition: all 800ms ease;
 }
 
-.sorvete > h3 , .acai > h3 {
-    font-weight: 900;
-    font-size: 1.65rem;
-    margin-bottom: 1.5rem;
-    color: #6f54c0; 
+.sorvete > h3,
+.acai > h3 {
+  font-weight: 900;
+  font-size: 2rem;
+  color: #6f54c0;
 }
 
-.sorvete:hover, .acai:hover, .picole:hover {
-    transform: scale(1.05);
-    transition: all 400ms ease;
+.sorvete:hover,
+.acai:hover,
+.picole:hover {
+  transform: scale(1.05);
+  transition: all 400ms ease;
 }
 
+.add-button {
+  background-color: #aa92f7;
+  border: none;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  font-weight: 700;
+  font-family: "Poppins", sans-serif;
+  cursor: pointer;
+  transition: all 500ms ease;
+}
+
+.add-button:hover,
+.rmv-button:hover {
+  background-color: #fff2a7;
+  transition: all 500ms ease;
+}
+
+.rmv-button {
+  background-color: #6f54c0;
+  border: none;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  font-weight: 700;
+  font-family: "Poppins", sans-serif;
+  cursor: pointer;
+  transition: all 500ms ease;
+}
 
 /* SVG Dividers & Backgrounds */
 
 .custom-shape-divider-bottom-1695921674 {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    overflow: hidden;
-    line-height: 0;
-    transform: rotate(180deg);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
 }
 
 .custom-shape-divider-bottom-1695921674 svg {
-    position: relative;
-    display: block;
-    width: calc(160% + 1.3px);
-    height: 72px;
-    transform: rotateY(180deg);
+  position: relative;
+  display: block;
+  width: calc(160% + 1.3px);
+  height: 72px;
+  transform: rotateY(180deg);
 }
 
 .custom-shape-divider-bottom-1695921674 .shape-fill {
-    fill: #FFFFFF;
+  fill: #ffffff;
 }
 
 .spacer {
-    aspect-ratio: 960/300;
-    width: 100%;
-    min-height: 100vh;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
+  aspect-ratio: 960/300;
+  width: 100%;
+  min-height: 100vh;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
 .layer1 {
-    background-image: url('../img/layer1.svg');
+  background-image: url("../img/layer1.svg");
 }

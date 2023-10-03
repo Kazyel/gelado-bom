@@ -4,13 +4,14 @@ for (let i = 0; i < updateBtns.length; i++) {
   updateBtns[i].addEventListener("click", function () {
     const productId = this.dataset.product;
     const action = this.dataset.action;
-    console.log("productId:", productId, "Action:", action);
-    updateOrder(productId, action);
+    const url=this.dataset.url;
+    console.log("productId:", productId, "Action:", action, "URL:", url);
+    updateOrder(productId, action, url);
   });
 }
 
-function updateOrder(productId, action) {
-  fetch("updateitem", {
+function updateOrder(productId, action, url) {
+  fetch(url, {
     method: "POST",
     headers: {
       'Content-Type': "application/json",

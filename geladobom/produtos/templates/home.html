@@ -1,5 +1,5 @@
-{% extends 'base.html' %} {% block title %} Gelado Bom - Bem vindos!{% endblock %} 
-{% block content %}
+{% extends 'base.html' %} {% block title %} Gelado Bom - Bem vindos! {% endblock%} 
+{% block content %} {% comment %} Home Section {% endcomment %}
 <section class="home-main">
   {% load static %}
   <img
@@ -40,10 +40,95 @@
     </svg>
   </div>
 </section>
+
+{% comment %} Section 1 {% endcomment %}
 <section class="home-section-1 spacer layer1">
   <div class="section1-title">
-    <h2>Conheça nossos</h2>
-    <h2>Sorvetes & Açaís</h2>
+    <h2>Aqui você encontra o que precisar!</h2>
+    <h3>Temos uma ampla gama de produtos, confira:</h3>
+  </div>
+  <div class="section1-products">
+    <div class="section1-product">
+      <img
+        class="product-main-img"
+        src="{% static 'img/sorvete-banner.jpg'%}"
+        alt="Banner do Sorvete Mamute"
+      />
+      <div class="product-link">
+        <a id="linkTitle">Picolés</a>
+        <svg
+          class="product-svg"
+          width="32px"
+          height="32px"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            id="stroke"
+            d="M6 12H18M18 12L13 7M18 12L13 17"
+            fill="#000"
+            stroke="#FFF"
+            stroke-width="3"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </div>
+    </div>
+    <div class="section1-product">
+      <img
+        class="product-main-img"
+        src="{% static 'img/sorvete-banner.jpg'%}"
+        alt="Banner do Sorvete Mamute"
+      />
+      <div class="product-link">
+        <a id="linkTitle">Sorvetes</a>
+        <svg
+          class="product-svg"
+          width="32px"
+          height="32px"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            id="stroke"
+            d="M6 12H18M18 12L13 7M18 12L13 17"
+            fill="#000"
+            stroke="#FFF"
+            stroke-width="3"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </div>
+    </div>
+    <div class="section1-product">
+      <img
+        class="product-main-img"
+        src="{% static 'img/sorvete-banner.jpg'%}"
+        alt="Banner do Sorvete Mamute"
+      />
+      <div class="product-link">
+        <a id="linkTitle">Açaís</a>
+        <svg
+          class="product-svg"
+          width="32px"
+          height="32px"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            id="stroke"
+            d="M6 12H18M18 12L13 7M18 12L13 17"
+            fill="#000"
+            stroke="#FFF"
+            stroke-width="3"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </div>
+    </div>
   </div>
 </section>
 

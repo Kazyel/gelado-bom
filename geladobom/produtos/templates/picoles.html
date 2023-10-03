@@ -9,19 +9,23 @@
 
         <ul class='picoles'>
             {% for picole in picoles %}
-                    <li data-product="{{picole.id}}" data-action="add" class='picole update-cart'>
-                        <h3>{{ picole.sabor }}</h3>
-                        <p class='cobertura'>{{ picole.tipo }}</p>
-                        <p>Preço: R$ {{ picole.preco }}</p>
-                        {% if picole.estoque > 0 %}
-                            <p>Itens no estoque: {{ picole.estoque }}</p>
-                        {% else %}
-                            <p>Este produto está fora de estoque.</p>
-                        {% endif %}
+                    <li class="picole">
+                        <div>
+                            <h3>{{ picole.sabor }}</h3>
+                             <p class='cobertura'>{{ picole.tipo }}</p>
+                        </div>
+                         <div>
+                            <p>Preço: R$ {{ picole.preco }}</p>
+                            {% if picole.estoque > 0 %}
+                                <p>Itens no estoque: {{ picole.estoque }}</p>
+                            {% else %}
+                                <p>Este produto está fora de estoque.</p>
+                            {% endif %}
+                        </div>
                         <div class="picoles-button">
-                            <button>Adicionar</button>
-                            <button>Remover</button>
-                        </div
+                            <button data-product="{{picole.id}}" data-action="add" data-url="updatepicoles" class='update-cart add-button'>Adicionar</button>
+                            <button data-product="{{picole.id}}" data-action="remove" data-url="updatepicoles" class="update-cart rmv-button">Remover</button>
+                        </div>
                     </li>
             {% endfor %}
         </ul>

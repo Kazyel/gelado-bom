@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import JsonResponse
 import json
-from .models import Picole, Sorvete, Acai, ShopCart
+from .models import Picole, Sorvete, Acai, ShopCartPicole, ShopCartSorvete, ShopCartAcai
 
 # Create your views here.
 
@@ -18,13 +18,31 @@ def sorvetes(request):
     return render(request, 'sorvetes-acai.html', {'sorvetes': Sorvetes, 'acais': Acais})
 
 
-def update_item(request):
+def update_picole(request):
     data = json.loads(request.body)
     productId = data['productId']
     action = data['action']
 
     product = Picole.objects.get(id=productId)
-    cart, created = ShopCart.objects.get_or_create(produto = product)
+    cart, created = ShopCartPicole.objects.get_or_create(produto = product)
+    if action == 'add':
+        cart.quantidade = (cart.quantidade + 1)
+    elif action == 'remove':
+        cart.quantidade = (cart.quantidade - 1)
+    
+    cart.save()
+    if cart.quantidade <= 0:
+        cart.delete()
+
+    return JsonResponse("Item was added", safe=False)
+
+def update_sorvetes(request):
+    data = json.loads(request.body)
+    productId = data['productId']
+    action = data['action']
+
+    product = Sorvete.objects.get(id=productId)
+    cart, created = ShopCartSorvete.objects.get_or_create(produto = product)
     if action == 'add':
         cart.quantidade = (cart.quantidade + 1)
     elif action == 'remove':
@@ -37,4 +55,6 @@ def update_item(request):
     return JsonResponse("Item was added", safe=False)
 
 def update_cart(request):
-    return {'cartItems': ShopCart.objects.all()}
+    return {'cartPicoles': ShopCartPicole.objects.all(), 
+            'cartSorvetes': ShopCartSorvete.objects.all(),
+            'cartAcais': ShopCartAcai.objects.all()}
