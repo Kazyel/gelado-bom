@@ -304,7 +304,7 @@ table {
   display: flex;
   justify-content: center;
   align-content: center;
-  min-height: calc(200px - 69px);
+  min-height: 200px;
 }
 
 .empty-shop p {
@@ -411,12 +411,21 @@ table {
   flex-direction: column;
   font-size: 1.5rem;
   font-weight: 700;
+  overflow: hidden;
+  object-fit: cover;
+  border-radius: 1.25rem 1.25rem 0 0;
 }
 
 .product-main-img {
-  width: 296px;
-  height: 188px;
   border-radius: 1.25rem 1.25rem 0 0;
+  width: 282px;
+  aspect-ratio: 16/9;
+  transition: all 500ms ease;
+}
+
+.product-main-img:hover {
+  transition: all 500ms ease;
+  transform: scale(1.025);
 }
 
 .product-link {
@@ -425,11 +434,10 @@ table {
   padding: 0.5rem 0.75rem;
   border-radius: 0 0 0.75rem 0.75rem;
   background-color: #463679;
+  z-index: 10;
 }
 
-.product-link a,
-img {
-  transition: all 250ms ease;
+.product-link a {
   cursor: pointer;
   text-decoration: none;
   color: white;
@@ -470,29 +478,27 @@ img {
   padding: 2rem;
   display: flex;
   flex-direction: column;
-  align-items: center;
   line-height: 1.5rem;
   justify-content: space-between;
   width: 240px;
   height: 240px;
   border: 2px solid #fffadd;
   border-radius: 1.45rem;
-  background-color: #0c0816;
+  background: rgb(12, 8, 22);
+  background: linear-gradient(
+    0deg,
+    rgba(12, 8, 22, 1) 0%,
+    rgba(26, 19, 46, 1) 100%
+  );
   color: #fffadd;
   cursor: pointer;
   transition: all 800ms ease;
 }
 
-.picole h3 {
-  font-weight: 900;
-  font-size: 1.65rem;
-  color: #6f54c0;
-}
-
 .cobertura {
   color: #463679;
   font-weight: 600;
-  font-size: 1.2rem;
+  font-size: 1rem;
 }
 
 /* Sorvetes & Açaí */
@@ -540,31 +546,48 @@ img {
   padding: 2rem;
   display: flex;
   flex-direction: column;
-  align-items: center;
   line-height: 1.5rem;
   justify-content: space-between;
   width: 240px;
   height: 240px;
   border: 2px solid #fffadd;
   border-radius: 1.45rem;
-  background-color: #0c0816;
+  background: rgb(12, 8, 22);
+  background: linear-gradient(
+    0deg,
+    rgba(12, 8, 22, 1) 0%,
+    rgba(26, 19, 46, 1) 100%
+  );
   color: #fffadd;
   cursor: pointer;
   transition: all 800ms ease;
 }
 
-.sorvete > h3,
-.acai > h3 {
+.sorvete h3,
+.acai h3,
+.picole h3 {
   font-weight: 900;
-  font-size: 2rem;
+  font-size: 1.5rem;
   color: #6f54c0;
+  border-bottom: 1px solid #6f54c0;
+  padding: 0.5rem 0;
 }
 
 .sorvete:hover,
 .acai:hover,
 .picole:hover {
-  transform: scale(1.05);
+  transform: scale(1.01);
   transition: all 400ms ease;
+}
+
+.sorvetes-acais,
+.picoles-div {
+  margin-bottom: 2rem;
+}
+
+.product-buttons {
+  display: flex;
+  justify-content: space-between;
 }
 
 .add-button {
@@ -595,25 +618,58 @@ img {
   transition: all 500ms ease;
 }
 
+.sorvete-data p,
+.picole-data p,
+.acai-data p {
+  font-weight: 200;
+}
+
+.bold {
+  font-weight: 600;
+  color: #fff2a7;
+}
+
 /* Footer */
 
 footer {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
-  width: 100vw;
-  background-color: #19152e;
+  width: 100%;
   padding: 1rem;
+  background-color: #19152e;
+  color: white;
+  font-weight: 300;
+  font-size: 0.75rem;
+  position: relative;
 }
 
-footer img {
-  width: 48px;
-  height: 48px;
+.footer-logos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+#logo-footer {
+  width: 36px;
+  height: 36px;
   border-radius: 0.5rem;
   mix-blend-mode: luminosity;
 }
 
+.footer-logo__div {
+  display: flex;
+  border-right: 1px solid white;
+  border-left: 1px solid white;
+  padding: 0 1rem;
+}
+
+.contact {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
 /* SVG Dividers & Backgrounds */
 
 .custom-shape-divider-bottom-1695921674 {

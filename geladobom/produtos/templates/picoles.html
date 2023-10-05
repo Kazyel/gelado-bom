@@ -14,20 +14,21 @@
                             <h3>{{ picole.sabor }}</h3>
                              <p class='cobertura'>{{ picole.tipo }}</p>
                         </div>
-                         <div>
-                            <p>Preço: R$ {{ picole.preco }}</p>
+                         <div class="picole-data">
+                            <p><span class="bold">Preço:</span> R$ {{ picole.preco }}</p>
                             {% if picole.estoque > 0 %}
-                                <p>Itens no estoque: {{ picole.estoque }}</p>
+                                <p><span class="bold">Itens no estoque:</span> {{ picole.estoque }}</p>
                             {% else %}
                                 <p>Este produto está fora de estoque.</p>
                             {% endif %}
                         </div>
-                        <div class="picoles-button">
+                        <div class="product-buttons">
                             <button data-product="{{picole.id}}" data-action="add" data-url="updatepicoles" class='update-cart add-button'>Adicionar</button>
                             <button data-product="{{picole.id}}" data-action="remove" data-url="updatepicoles" class="update-cart rmv-button">Remover</button>
                         </div>
                     </li>
             {% endfor %}
         </ul>
+       
 </div>
 {% endblock %}

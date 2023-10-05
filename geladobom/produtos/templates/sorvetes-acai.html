@@ -1,49 +1,80 @@
-{% extends 'base.html' %}
+{% extends 'base.html' %} {% block title %} Gelado Bom - Sorvetes & Açaí 
+{% endblock %} {% block content %}
 
-{% block title %} Gelado Bom - Sorvetes & Açaí {% endblock %}
+<div class="sorvetes-acais">
+  <div class="sorvetes-div">
+    <h2>Sorvetes</h2>
 
-{% block content %} 
+    <ul class="sorvetes">
+      {% for sorvete in sorvetes %}
+      <li class="sorvete">
+        <h3>{{ sorvete.sabor }}</h3>
+        <div class="sorvete-data">
+          <p><span class="bold">Preço:</span> R$ {{ sorvete.preco }}</p>
+          {% if sorvete.estoque > 0 %}
+          <p><span class="bold">Itens no estoque:</span> {{ sorvete.estoque }}</p>
+          {% else %}
+          <p>Este produto está fora de estoque.</p>
+          {% endif %}
+        </div>
+        <div class="product-buttons">
+          <button
+            data-product="{{sorvete.id}}"
+            data-action="add"
+            data-url="updatesorvetes"
+            class="update-cart add-button"
+          >
+            Adicionar
+          </button>
+          <button
+            data-product="{{sorvete.id}}"
+            data-action="remove"
+            data-url="updatesorvetes"
+            class="update-cart rmv-button"
+          >
+            Remover
+          </button>
+        </div>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+  <div class="acais-div">
+    <h2>Açaí</h2>
 
-<div class='sorvetes-acais'>
-    <div class='sorvetes-div'>
-        <h2>Sorvetes</h2>
-
-            <ul class='sorvetes'>
-                {% for sorvete in sorvetes %}
-                        <li class='sorvete'>
-                            <h3>{{ sorvete.sabor }}</h3>
-                            <div>
-                                <p>Preço: R$ {{ sorvete.preco }}</p>
-                                {% if sorvete.estoque > 0 %}
-                                    <p>Itens no estoque: {{ sorvete.estoque }}</p>
-                                {% else %}
-                                    <p>Este produto está fora de estoque.</p>
-                                {% endif %}
-                            </div>
-                            <div class="product-buttons">
-                                <button data-product="{{sorvete.id}}" data-action="add" data-url="updatesorvetes" class='update-cart add-button'>Adicionar</button>
-                                <button data-product="{{sorvete.id}}" data-action="remove" data-url="updatesorvetes" class="update-cart rmv-button">Remover</button>
-                            </div>
-                        </li>
-                {% endfor %}
-            </ul>
-    </div>
-
-    <div id="acai" class='acais-div'>
-        <h2>Açaís</h2>
-            <ul class='acais'>
-                {% for acai in acais %}
-                    <li class='acai'>
-                        <h3>{{ acai.tamanho }}</h3>
-                        <p>Preço: R$ {{ acai.preco }}</p>
-                        {% if acai.estoque > 0 %}
-                            <p>Itens no estoque: {{ acai.estoque }}</p>
-                        {% else %}
-                            <p>Este produto está fora de estoque.</p>
-                        {% endif %}
-                    </li>
-                {% endfor %}
-            </ul>
-    </div>
+    <ul class="acais">
+      {% for acai in acais %}
+      <li class="acai">
+        <h3>{{ acai.tamanho }}</h3>
+        <div class="acai-data">
+          <p><span class="bold">Preço:</span> R$ {{ acai.preco }}</p>
+          {% if acai.estoque > 0 %}
+          <p><span class="bold">Itens no estoque:</span> {{ acai.estoque }}</p>
+          {% else %}
+          <p>Este produto está fora de estoque.</p>
+          {% endif %}
+        </div>
+        <div class="product-buttons">
+          <button
+            data-product="{{acai.id}}"
+            data-action="add"
+            data-url="updateacais"
+            class="update-cart add-button"
+          >
+            Adicionar
+          </button>
+          <button
+            data-product="{{acai.id}}"
+            data-action="remove"
+            data-url="updateacais"
+            class="update-cart rmv-button"
+          >
+            Remover
+          </button>
+        </div>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
 </div>
-{% endblock %} 
+{% endblock %}

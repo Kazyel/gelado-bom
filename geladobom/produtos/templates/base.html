@@ -41,7 +41,7 @@
             <img class='shop-svg selected' src="{% static "img/shop.svg" %}"
             alt="Ícone do carrinho de compras">
             <div class="shop-dropdown">
-            {% if not cartPicoles and not cartSorvetes %}
+            {% if not cartPicoles and not cartSorvetes and not cartAcais%}
               <div class='empty-shop'>
                 <p>O carrinho está vazio.</p>
               </div>  
@@ -80,8 +80,27 @@
                   {% endfor %} 
                 </div>
                 {% endif %}
+                {% if cartAcais %}
+                <div class="shop-sorvetes">
+                  <h2>Açaís</h2>
+                  {% for cartAcai in cartAcais %}
+                  {% if cartAcai.quantidade <= 0 %} 
+                  {% else %}
+                  <div class="cart-products">
+                    <div style="display: flex; gap: 4px">
+                      •
+                      <p>{{cartAcai.produto}}</p>
+                    </div>
+                    <p>{{cartAcai.quantidade}}x</p>
+                  </div>
+                    {% endif %} 
+                  {% endfor %} 
+                </div>
+                {% endif %}
               {% endif %}
+              {% if cartPicoles or cartSorvetes or cartAcais%}
               <button class="shop-button">Comprar</button>
+              {% endif %}
             </div>
           </li>
         </ul>
@@ -89,7 +108,18 @@
     </div>
     <main class="main">{% block content %} {% endblock %}</main>
     <footer>
-      <img src="{% static 'img/mamute.png'%}"/>
+      <p>© Kazyel - All Rights Reserved.</p>
+      <div class="footer-logos">
+        <div><a href="https://www.facebook.com/" target="_blank"><img id="logo-facebook" src="{% static 'img/fb.svg' %}" alt="Logo do Facebook"/></a></div>
+        <div class="footer-logo__div">
+          <img alt="Logo do Mamute" src="{% static 'img/mamute.png'%}" id="logo-footer"/>
+        </div>
+        <div><a href="https://www.instagram.com/" target="_blank"><img id="logo-instagram" src="{% static 'img/ig.svg' %}" alt="Logo do Instagram"/></a></div>
+      </div>
+      <div class="contact">
+        <img id="phone-icon" src="{% static 'img/contact.svg' %}" alt="Ícone de Contato"/>
+        <p>(27) 99792-7756</p>
+      </div>
     </footer>
     <script type="text/javascript" src="{% static 'js/main.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/cart.js' %}"></script>

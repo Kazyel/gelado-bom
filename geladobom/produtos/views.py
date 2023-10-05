@@ -26,7 +26,8 @@ def update_picole(request):
     product = Picole.objects.get(id=productId)
     cart, created = ShopCartPicole.objects.get_or_create(produto = product)
     if action == 'add':
-        cart.quantidade = (cart.quantidade + 1)
+        if product.estoque > cart.quantidade:
+             cart.quantidade = (cart.quantidade + 1)
     elif action == 'remove':
         cart.quantidade = (cart.quantidade - 1)
     
@@ -44,7 +45,8 @@ def update_sorvetes(request):
     product = Sorvete.objects.get(id=productId)
     cart, created = ShopCartSorvete.objects.get_or_create(produto = product)
     if action == 'add':
-        cart.quantidade = (cart.quantidade + 1)
+        if product.estoque > cart.quantidade:
+            cart.quantidade = (cart.quantidade + 1)
     elif action == 'remove':
         cart.quantidade = (cart.quantidade - 1)
     
@@ -58,3 +60,24 @@ def update_cart(request):
     return {'cartPicoles': ShopCartPicole.objects.all(), 
             'cartSorvetes': ShopCartSorvete.objects.all(),
             'cartAcais': ShopCartAcai.objects.all()}
+    
+def update_acais(request):
+    data = json.loads(request.body)
+    productId = data['productId']
+    action = data['action']
+
+    product = Acai.objects.get(id=productId)
+    cart, created = ShopCartAcai.objects.get_or_create(produto = product)
+    
+
+    if action == 'add':
+        if product.estoque > cart.quantidade:
+            cart.quantidade = (cart.quantidade + 1)
+    elif action == 'remove':
+        cart.quantidade = (cart.quantidade - 1)
+    
+    cart.save()
+    if cart.quantidade <= 0:
+        cart.delete()
+
+    return JsonResponse("Item was added", safe=False)
