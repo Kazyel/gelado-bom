@@ -1,10 +1,9 @@
+// Homepage Elements
 const homeProductSvg = document.querySelectorAll("#stroke");
 const homeProductLink = document.querySelectorAll("#linkTitle");
-
+// Shop Elements
 const shopSvg = document.querySelector(".shop-svg");
 const shopDropdown = document.querySelector(".shop-dropdown");
-
-console.log(homeProductLink);
 
 // Dropdown Shop
 shopSvg.addEventListener("click", (e) => {
@@ -13,21 +12,20 @@ shopSvg.addEventListener("click", (e) => {
 });
 
 document.addEventListener("click", (e) => {
-  if (
-    !e.target.matches(".shop-dropdown") &&
-    !e.target.matches(".shop-dropdown-items")
-  ) {
+  if (!shopDropdown.contains(e.target)) {
     shopDropdown.classList.remove("display");
   }
 });
 
-for (i in homeProductSvg) {
-  homeProductLink[i].addEventListener("mouseover", (e) => {
-    homeProductSvg[i].classList.add("strokeHover");
-    e.stopPropagation()
+// Arrow Animation
+for (let svg = 0; svg < homeProductLink.length; svg++) {
+  homeProductLink[svg].addEventListener("mouseover", (e) => {
+    homeProductSvg[svg].classList.add("strokeHover");
+    e.stopPropagation();
+  });
+
+  homeProductLink[svg].addEventListener("mouseleave", (e) => {
+    homeProductSvg[svg].classList.remove("strokeHover");
+    e.stopPropagation();
   });
 }
-
-homeProductLink.addEventListener("mouseleave", (e) => {
-  homeProductSvg.classList.remove("strokeHover");
-});

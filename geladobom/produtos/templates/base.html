@@ -21,7 +21,7 @@
                 ><img
                   class="nav-icon"
                   src="{% static 'img/mamute.png' %}"
-                  alt="Logo do Açaí Mamute" 
+                  alt="Logo do Açaí Mamute"
               /></a>
             </li>
           </div>
@@ -38,38 +38,49 @@
             </li>
           </div>
           <li class="shop">
-            <img class='shop-svg selected' src="{% static "img/shop.svg" %}" alt="Ícone do carrinho de compras">
+            <img class='shop-svg selected' src="{% static "img/shop.svg" %}"
+            alt="Ícone do carrinho de compras">
             <div class="shop-dropdown">
-              <div class="shop-picoles">
-              <h2>Picolés</h2>  
-                {% for cartPicole in cartPicoles %}
-                  {% if cartPicole.quantidade <= 0 %}
+            {% if not cartPicoles and not cartSorvetes %}
+              <div class='empty-shop'>
+                <p>O carrinho está vazio.</p>
+              </div>  
+            {% else %}
+                {% if cartPicoles %}
+                <div class="shop-picoles">
+                  <h2>Picolés</h2>
+                  {% for cartPicole in cartPicoles %} 
+                  {% if cartPicole.quantidade <= 0 %} 
                   {% else %}
-                    <div class='cart-products'>
-                      <div style="display:flex; gap:4px">
-                        •<p>{{cartPicole.produto}}</p>
-                      </div>
-                      <p>{{cartPicole.quantidade}}x</p>
+                  <div class="cart-products">
+                    <div style="display: flex; gap: 4px">
+                      •
+                      <p>{{cartPicole.produto}}</p>
                     </div>
-                  {% endif %}
-                {% endfor %}
-              </div>
-              <div class="shop-sorvetes">
-                {% if cartSorvetes %}
-                  <h2>Sorvetes</h2>
+                    <p>{{cartPicole.quantidade}}x</p>
+                  </div>
+                    {% endif %} 
+                  {% endfor %} 
+                </div>
                 {% endif %}
-                {% for cartSorvete in cartSorvetes %}
-                  {% if cartSorvete.quantidade <= 0 %}
-                    {% else %}
-                      <div class='cart-products'>
-                        <div style="display:flex; gap:4px">
-                          •<p>{{cartSorvete.produto}}</p>
-                        </div>
-                        <p>{{cartSorvete.quantidade}}x</p>
-                      </div>
-                    {% endif %}  
-                {% endfor %}
-              </div>
+                {% if cartSorvetes %}
+                <div class="shop-sorvetes">
+                  <h2>Sorvetes</h2>
+                  {% for cartSorvete in cartSorvetes %}
+                  {% if cartSorvete.quantidade <= 0 %} 
+                  {% else %}
+                  <div class="cart-products">
+                    <div style="display: flex; gap: 4px">
+                      •
+                      <p>{{cartSorvete.produto}}</p>
+                    </div>
+                    <p>{{cartSorvete.quantidade}}x</p>
+                  </div>
+                    {% endif %} 
+                  {% endfor %} 
+                </div>
+                {% endif %}
+              {% endif %}
               <button class="shop-button">Comprar</button>
             </div>
           </li>
@@ -77,26 +88,31 @@
       </nav>
     </div>
     <main class="main">{% block content %} {% endblock %}</main>
-    <script type='text/javascript' src="{% static 'js/main.js' %}"></script>
-    <script type='text/javascript' src="{% static 'js/cart.js' %}"></script>
+    <footer>
+      <img src="{% static 'img/mamute.png'%}"/>
+    </footer>
+    <script type="text/javascript" src="{% static 'js/main.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/cart.js' %}"></script>
     <script type="text/javascript">
       function getCookie(name) {
         let cookieValue = null;
-        if (document.cookie && document.cookie !== '') {
-            const cookies = document.cookie.split(';');
-            for (let i = 0; i < cookies.length; i++) {
-                const cookie = cookies[i].trim();
-                // Does this cookie string begin with the name we want?
-                if (cookie.substring(0, name.length + 1) === (name + '=')) {
-                    cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
-                    break;
-                }
+        if (document.cookie && document.cookie !== "") {
+          const cookies = document.cookie.split(";");
+          for (let i = 0; i < cookies.length; i++) {
+            const cookie = cookies[i].trim();
+            // Does this cookie string begin with the name we want?
+            if (cookie.substring(0, name.length + 1) === name + "=") {
+              cookieValue = decodeURIComponent(
+                cookie.substring(name.length + 1)
+              );
+              break;
             }
+          }
         }
         return cookieValue;
       }
-      const csrftoken = getCookie('csrftoken');
+      const csrftoken = getCookie("csrftoken");
     </script>
-    <script 
+    <script
   </body>
 </html>
